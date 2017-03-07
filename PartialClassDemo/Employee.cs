@@ -48,5 +48,26 @@ namespace PartialClassDemo
                 listEmployees.FirstOrDefault(Emp => Emp.EmployeeId == employeeId).Name = value;
             }
         }
+
+        //overloading indexers
+        public string this[string gender]
+        {
+            get {
+
+                return listEmployees.Count(emp => emp.Gender == gender).ToString();
+            }
+
+            set
+            {
+                foreach(Employee emp in listEmployees)
+                {
+
+                    if (emp.Gender == gender)
+                    {
+                        emp.Gender = value;
+                    }
+                }
+            }
+        }
     }
 }
