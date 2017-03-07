@@ -7,5 +7,6 @@ namespace PartialClassDemo
 {
     public class Customer
     {
+
     }
 }
